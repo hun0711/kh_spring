@@ -11,11 +11,27 @@
 		infrastructure -->
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
+	<beans:bean id="default-handler-mapping" 
+	class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+	<beans:bean name="/di/insaList.sp" class="com.example.demo.controller.ListController">
+<beans:property name="insaBean2"> <!-- property의 이름은 class의 setter이름과 일치해야한다! -> * 인스턴스변수  -->
+ <beans:list>
+  <beans:value>HI!!!</beans:value>
+  <beans:value>Have a Good Time~</beans:value>
+  <beans:value>Have a Nice Day~</beans:value>
+ </beans:list>
+</beans:property>
+</beans:bean>
 	<beans:bean id="url-mapping"
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<beans:property name="mappings">
 			<beans:props>
 				<beans:prop key="/board3/boardList.sp">board-controller</beans:prop>
+				<beans:prop key="/board3/boardDetail.sp">board-controller</beans:prop>
+				<beans:prop key="/board3/jsonBoardList.sp">board-controller</beans:prop>
+				<beans:prop key="/board3/boardInsert.sp">board-controller</beans:prop>
+				<beans:prop key="/board3/boardUpdate.sp">board-controller</beans:prop>
+				<beans:prop key="/board3/boardDelete.sp">board-controller</beans:prop> <!-- 메소드이름 지정  -->
 			</beans:props>
 		</beans:property>
 	</beans:bean>
@@ -27,12 +43,18 @@
 		<beans:property name="mappings">
 			<beans:props>
 				<beans:prop key="/board3/boardList.sp">boardList</beans:prop>
+				<beans:prop key="/board3/boardDetail.sp">boardDetail</beans:prop>
+				<beans:prop key="/board3/jsonBoardList.sp">jsonBoardList</beans:prop>
+				<beans:prop key="/board3/boardInsert.sp">boardInsert</beans:prop>
+				<beans:prop key="/board3/boardUpdate.sp">boardUpdate</beans:prop>
+				<beans:prop key="/board3/boardDelete.sp">boardDelete</beans:prop>
 			</beans:props>
 		</beans:property>
 	</beans:bean>	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving
 		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources
 		in the /WEB-INF/views directory -->
 	<beans:bean

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="insa" class="com.example.demo.di.InsaList">
+<property name="insaBean"> <!-- property의 이름은 class의 setter이름과 일치해야한다! -> * 인스턴스변수  -->
+ <list>
+  <value>HI!!!</value>
+  <value>Have a Good Time~</value>
+  <value>Have a Nice Day~</value>
+ </list>
+</property>
+</bean>
+
+</beans>

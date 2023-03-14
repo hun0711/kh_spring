@@ -41,7 +41,7 @@ public class SonataTest {
  * 장점  : 컴포넌트 간의 결합도가 낮아져 컴포넌트의 재사용 및 확장이 쉽고 컴포넌트의
  * 의존 관계 변경이 쉬움 
  * 
- * Spring Container는 BeanFactory와 ApplicationContext라는 두 가지 유형의 컨테이너를 제공하ㅣㅁ
+ * Spring Container는 BeanFactory와 ApplicationContext라는 두 가지 유형의 컨테이너를 제공함
  * 
  * BeanFactory
  * : 객체를 관리하는 고급 설정 기법 제공
